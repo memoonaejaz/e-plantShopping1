@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './ProductList.css';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from './CartSlice';
+import { addItem ,updateQuantity} from './CartSlice';
 
 function ProductList() {
     const [showCart, setShowCart] = useState(false);
@@ -226,6 +226,18 @@ function ProductList() {
     const handleCartClick = (e) => {
         e.preventDefault();
         setShowCart(true);
+    };
+    const handleIncrement = (plant) => {
+        dispatch(updateQuantity({ name: plant.name, quantity: getQuantity(plant) + 1 }));
+    };
+
+    const handleDecrement = (plant) => {
+        const quantity = getQuantity(plant);
+        if (quantity === 1) {
+            dispatch(updateQuantity({ name: plant.name, quantity: 0 }));
+        } else {
+            dispatch(updateQuantity({ name: plant.name, quantity: quantity - 1 }));
+        }
     };
 
     const handlePlantsClick = (e) => {
