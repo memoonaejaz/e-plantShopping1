@@ -284,3 +284,9 @@
 .get-started-button, .get-started-button1 {
   margin: 5px;
 }
+.cart-item-image {
+    max-width: 100px; /* Set the maximum width for cart item images */
+    max-height: 100px; /* Set the maximum height for cart item images */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+}

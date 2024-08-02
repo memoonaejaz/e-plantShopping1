@@ -250,3 +250,11 @@ body {
         text-align: center; /* Align text to the center */
       }
   }
+  .plant-card img {
+    max-width: 200px; /* Set the maximum width */
+    max-height: 200px; /* Set the maximum height */
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
